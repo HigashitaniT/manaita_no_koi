@@ -1,15 +1,6 @@
 #include "menuScene.h"
 #include "Recipe3.h"
-#include "Recipe4.h"
-#include "Recipe5.h"
-#include "Recipe7.h"
-#include "Recipe8.h"
-#include "Recipe9.h"
-#include "Recipe12.h"
-#include "Recipe13.h"
-#include "Recipe14.h"
-#include "Recipe26.h"
-#include "TimerTest.h"
+
 
 USING_NS_CC;
 
@@ -42,22 +33,11 @@ bool menuScene::init()
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 	char* name[] =
 	{
-		"Recipe 3",
-		"Recipe 4",
-		"Recipe 5",
-		"Recipe 7",
-		"Recipe 8",
-		"Timer Test !",
-		"Recipe 9",
-		"Recipe 12",
-		"Recipe 13",
-		"Recipe 14",
-		"Recipe 26",
+		"START",
 	};
-	for (int i = 0; i < 11; i++)
+	for (int i = 0; i < 1; i++)
 	{
-		makeButton(i + 10, name[i],
-			ccp(250 + (i / 10) * 460, 600 - 60 * (i % 10)));
+		makeButton(i + 10, name[i],ccp(480, 300 - 60 * i));
 	}
 
     return true;
@@ -94,36 +74,6 @@ void menuScene::tapCallback(CCObject* pSender, CCControlEvent event)
 	{
 	case 10:
 		nextScene = Recipe3Scene::scene();
-		break;
-	case 11:
-		nextScene = Recipe4Scene::scene();
-		break;
-	case 12:
-		nextScene = Recipe5Scene::scene();
-		break;
-	case 13:
-		nextScene = Recipe7Scene::scene();
-		break;
-	case 14:
-		nextScene = Recipe8Scene::scene();
-		break;
-	case 15:
-		nextScene = TimerTestScene::scene();
-		break;
-	case 16:
-		nextScene = Recipe9Scene::scene();
-		break;
-	case 17:
-		nextScene = Recipe12Scene::scene();
-		break;
-	case 18:
-		nextScene = Recipe13Scene::scene();
-		break;
-	case 19:
-		nextScene = Recipe14Scene::scene();
-		break;
-	case 20:
-		nextScene = Recipe26Scene::scene();
 		break;
 	default:
 		return;
